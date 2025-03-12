@@ -1,0 +1,32 @@
+- name: Madman
+  image: /placeholder.svg?height=40&width=80
+
+- name: Sky
+  image: /placeholder.svg?height=40&width=80
+
+- name: Space
+  image: /placeholder.svg?height=40&width=80
+
+- name: TVNZ
+  image: /placeholder.svg?height=40&width=80
+
+- name: Al Jazeera
+  image: /placeholder.svg?height=40&width=80
+
+- name: BBC
+  image: /placeholder.svg?height=40&width=80
+
+- name: Amazon Studios
+  image: /placeholder.svg?height=40&width=80
+
+- name: Netflix
+  image: /placeholder.svg?height=40&width=80
+
+- name: Vendetta
+  image: /placeholder.svg?height=40&width=80
+
+- name: Film NZ
+  image: /placeholder.svg?height=40&width=80
+
+- name: HBO
+  image: /placeholder.svg?height=40&width=80

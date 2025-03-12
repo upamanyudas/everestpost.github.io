@@ -1,0 +1,45 @@
+# Site settings
+title: EVEREST POST
+email: producers@everestpost.co.nz
+description: >-
+  Everest Post provides high-quality post-production services including audio,
+  picture, DIT, remote connectivity, and editing facilities for film and television.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://www.everestpost.co.nz" # the base hostname & protocol for your site
+phone: "+64 9 974 1992"
+address: "79 NEWTON ROAD, GREY LYNN, AUCKLAND, NEW ZEALAND"
+
+# Build settings
+markdown: kramdown
+permalink: /:title/
+
+# Collections
+collections:
+  secondary_portfolio:
+    output: false
+  clients:
+    output: false
+  footer_logos:
+    output: false
+
+# Minification
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Plugins
+plugins:
+  - jekyll-minifier
+
+# Minifier settings
+jekyll-minifier:
+  exclude: ['*.xml', '*.json', 'robots.txt']
+  js_compressor: uglifier
+  compress_css: true
+  compress_javascript: true
+  html_compressor: htmlcompressor
+  preserve_line_breaks: false
+  remove_intertag_spaces: true
+  remove_comments: true
+  simple_doctype: false
+  compress_json: false

@@ -1,0 +1,14 @@
+- name: Logo 1
+  image: /placeholder.svg?height=40&width=40
+
+- name: Logo 2
+  image: /placeholder.svg?height=40&width=40
+
+- name: Logo 3
+  image: /placeholder.svg?height=40&width=40
+
+- name: Logo 4
+  image: /placeholder.svg?height=40&width=40
+
+- name: Logo 5
+  image: /placeholder.svg?height=40&width=40

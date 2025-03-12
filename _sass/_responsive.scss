@@ -1,0 +1,95 @@
+/* Media Queries */
+@media (max-width: $breakpoint-lg) {
+    .portfolio-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: $breakpoint-md) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: $breakpoint-sm) {
+    /* Switch to mobile navigation */
+    .desktop-nav {
+        display: none;
+    }
+
+    .mobile-header {
+        display: flex;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .hero-text {
+        font-size: $font-size-base;
+        padding: 0 $spacing-md;
+
+        br {
+            display: none;
+        }
+    }
+
+    .client-logos {
+        gap: $spacing-md;
+    }
+
+    .footer-logos {
+        flex-wrap: wrap;
+    }
+
+    .logo-svg {
+        height: $logo-height-mobile;
+    }
+
+    /* Adjust scroll down animation size for mobile */
+    .mouse {
+        width: 25px;
+        height: 40px;
+    }
+
+    .move {
+        width: 5px;
+        height: 5px;
+    }
+
+    @keyframes move-down {
+        0% {
+            opacity: 0;
+            top: 8px;
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+            top: 25px;
+        }
+    }
+
+    .post {
+        margin-top: 100px;
+    }
+}
+
+@media (max-width: $breakpoint-xs) {
+    .hero-text {
+        font-size: $font-size-small;
+    }
+
+    .client-logo img {
+        max-height: 25px;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .logo-svg {
+        height: $logo-height-mobile;
+    }
+}

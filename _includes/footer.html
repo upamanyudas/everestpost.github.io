@@ -1,0 +1,21 @@
+<section class="contact">
+    <h3>CONTACT US</h3>
+    <p>{{ site.address }}</p>
+    <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+    <p>{{ site.phone }}</p>
+
+    <div class="footer-logos">
+        {% for logo in site.data.footer_logos %}
+        <img src="{{ logo.image }}" alt="{{ logo.name }}">
+        {% endfor %}
+    </div>
+</section>
+
+<footer>
+    <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+    </div>
+</footer>
+
+<!-- JavaScript -->
+<script src="{{ '/assets/js/script.js' | relative_url }}"></script>

@@ -1,0 +1,21 @@
+<header>
+    <div class="mobile-header">
+        <div class="hamburger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="mobile-logo">
+            <a href="{{ '/' | relative_url }}">
+                <img src="{{ '/assets/img/logo.svg' | relative_url }}" alt="{{ site.title }}" class="logo-svg">
+            </a>
+        </div>
+        <div class="placeholder-div"></div>
+    </div>
+
+    {% include nav.html %}
+
+    <div class="mobile-menu">
+        <ul class="mobile-nav-links"></ul>
+    </div>
+</header>

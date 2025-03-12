@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVEREST POST Polar Storage Calculator</title>
+    <style>
+        body { font-family: monospace; background-color: #1e1e1e; color: #c5c5c5; margin: 20px; }
+        .input-group { display: flex; align-items: center; margin: 10px 0; }
+        .input-group input { background-color: #2e2e2e; color: #ffffff; border: 1px solid #555; padding: 5px; margin-right: 10px; font-size: 16px; }
+        .input-group select { background-color: #2e2e2e; color: #ffffff; border: 1px solid #555; padding: 5px; margin-right: 10px; }
+        .button-group { display: flex; align-items: center; margin-top: 10px; }
+        .clear-button { background-color: #444; color: white; border: none; padding: 8px 12px; cursor: pointer; margin-right: 10px; }
+        .clear-button:hover { background-color: #666; }
+        .calc-button { background-color: #007acc; color: white; border: none; padding: 10px 15px; cursor: pointer; }
+        .calc-button:hover { background-color: #005f99; }
+        .result { margin-top: 20px; font-weight: bold; color: #00ff99; }
+        @media (max-width: 600px) {
+            .input-group { flex-direction: column; align-items: flex-start; }
+            .input-group input, .input-group select { margin-bottom: 5px; }
+            .button-group { flex-direction: column; align-items: flex-start; }
+            .clear-button { margin-bottom: 5px; }
+        }
+    </style>
+</head>
+<body>
+    <h1>EVEREST POST Polar Storage Calculator</h1>
+    <form id="costCalculator">
+        <label for="storage">Storage Used:</label>
+        <div class="input-group">
+            <input type="number" id="storage" name="storage" required>
+            <select id="storageUnit">
+                <option value="1">GB</option>
+                <option value="1000" selected>TB</option>
+                <option value="1000000">PB</option>
+            </select>
+        </div>
+
+        <label for="egress">Data Egress:</label>
+        <div class="input-group">
+            <input type="number" id="egress" name="egress" required>
+            <select id="egressUnit">
+                <option value="1" selected>GB</option>
+                <option value="1000">TB</option>
+                <option value="1000000">PB</option>
+            </select>
+        </div>
+
+        <label for="deletion">Data Deletion:</label>
+        <div class="input-group">
+            <input type="number" id="deletion" name="deletion" required>
+            <select id="deletionUnit">
+                <option value="1" selected>GB</option>
+                <option value="1000">TB</option>
+                <option value="1000000">PB</option>
+            </select>
+        </div>
+
+        <div class="button-group">
+            <button type="button" class="clear-button" onclick="clearAll()">Clear All</button>
+            <button type="button" class="calc-button" onclick="calculateCost()">Calculate</button>
+        </div>
+    </form>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        const storageCostPerGB = 0.012;
+        const egressCostPerGB = 0.02;
+        const deleteCostPerGB = 0.004;
+        const classBFreeTransactionsPerDay = 2500;
+        const classBCostPer10000 = 0.004;
+        const averageFileSizeGB = 0.1;
+
+        async function fetchExchangeRate() {
+            try {
+                const response = await fetch('https://api.exchangerate-api.com/v4/latest/USD');
+                const data = await response.json();
+                return data.rates.NZD ?? 1.5;
+            } catch (error) {
+                console.error('Error fetching exchange rate:', error);
+                return 1.5;
+            }
+        }
+
+        async function calculateCost() {
+            const storage = parseFloat(document.getElementById('storage').value) || 0;
+            const storageMultiplier = parseFloat(document.getElementById('storageUnit').value);
+            const egress = parseFloat(document.getElementById('egress').value) || 0;
+            const egressMultiplier = parseFloat(document.getElementById('egressUnit').value);
+            const deletion = parseFloat(document.getElementById('deletion').value) || 0;
+            const deletionMultiplier = parseFloat(document.getElementById('deletionUnit').value);
+
+            const storageGB = storage * storageMultiplier;
+            const egressGB = egress * egressMultiplier;
+            const deletionGB = deletion * deletionMultiplier;
+
+            const storageCost = storageGB * storageCostPerGB;
+            const egressCost = egressGB * egressCostPerGB;
+            const deletionCost = deletionGB * deleteCostPerGB;
+
+            const totalFiles = storageGB / averageFileSizeGB;
+            const listFileTransactions = Math.ceil(totalFiles / 1000);
+            const downloadFileTransactions = Math.ceil(egressGB / averageFileSizeGB);
+            const deleteFileTransactions = Math.ceil(deletionGB / averageFileSizeGB);
+
+            const totalClassBTransactions = listFileTransactions + downloadFileTransactions + deleteFileTransactions;
+            const payableClassBTransactions = Math.max(0, totalClassBTransactions - classBFreeTransactionsPerDay);
+            const classBCost = (payableClassBTransactions / 10000) * classBCostPer10000;
+
+            const totalCostUSD = storageCost + egressCost + deletionCost + classBCost;
+            const exchangeRate = await fetchExchangeRate();
+            const totalCostNZD = totalCostUSD * exchangeRate;
+
+            document.getElementById('result').innerText = `Estimated Monthly Cost: $${totalCostNZD.toFixed(2)} NZD`;
+        }
+
+        function clearAll() {
+            document.getElementById('storage').value = '';
+            document.getElementById('egress').value = '';
+            document.getElementById('deletion').value = '';
+            document.getElementById('result').innerText = '';
+        }
+    </script>
+</body>
+</html>

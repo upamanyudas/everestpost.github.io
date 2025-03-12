@@ -1,0 +1,23 @@
+<nav class="desktop-nav">
+    <ul class="nav-links" id="main-menu">
+        <li><a href="{{ '/' | relative_url }}" class="nav-item">HOME</a></li>
+        <li class="dropdown">
+            <a href="{{ '/services/' | relative_url }}" class="nav-item">SERVICES</a>
+            <div class="dropdown-content">
+                <a href="{{ '/services/audio/' | relative_url }}">Audio</a>
+                <a href="{{ '/services/picture/' | relative_url }}">Picture</a>
+                <a href="{{ '/services/dit/' | relative_url }}">DIT</a>
+                <a href="{{ '/services/remote-connectivity/' | relative_url }}">Remote Connectivity</a>
+                <a href="{{ '/services/remote-edit-finish/' | relative_url }}">Remote Edit & Finish</a>
+                <a href="{{ '/services/facilities/' | relative_url }}">Facilities</a>
+            </div>
+        </li>
+        <li class="logo-container">
+            <a href="{{ '/' | relative_url }}">
+                <img src="{{ '/assets/img/logo.svg' | relative_url }}" alt="{{ site.title }}" class="logo-svg">
+            </a>
+        </li>
+        <li><a href="{{ '/team/' | relative_url }}" class="nav-item">THE TEAM</a></li>
+        <li><a href="{{ '/contact/' | relative_url }}" class="nav-item">CONTACT</a></li>
+    </ul>
+</nav>

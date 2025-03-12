@@ -1,0 +1,168 @@
+/* Page Layout Styles */
+.page-hero {
+    position: relative;
+    height: 30vh;
+    min-height: 400px;
+    background-size: cover;
+    background-position: center;
+    background-color: $color-background;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Removed margin-top that was causing the black space */
+}
+
+.page-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: $spacing-xl;
+}
+
+.page-title {
+    font-size: 72px;
+    font-weight: $font-weight-bold;
+    letter-spacing: 2px;
+    color: $color-text;
+    text-transform: uppercase;
+}
+
+.page-subtitle {
+    font-size: $font-size-large;
+    color: $color-text;
+    margin-top: $spacing-md;
+}
+
+.page-content {
+    padding: $spacing-xl 0;
+}
+
+/* Contact Page Specific Styles */
+.contact-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+
+    section {
+        margin-bottom: $spacing-xl;
+    }
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: $spacing-md;
+        letter-spacing: 1px;
+    }
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: $spacing-sm $spacing-lg;
+    background-color: $color-text;
+    color: $color-background;
+    border: none;
+    font-size: $font-size-small;
+    font-weight: $font-weight-medium;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all $transition-speed ease;
+
+    &:hover {
+        opacity: 0.9;
+    }
+}
+
+.aspera-button {
+    background-color: transparent;
+    border: 1px solid $color-text;
+    color: $color-text;
+
+    .aspera-logo {
+        height: 20px;
+        margin-right: $spacing-sm;
+    }
+}
+
+.button-group {
+    display: flex;
+    gap: $spacing-md;
+    margin-top: $spacing-md;
+}
+
+/* Form Styles */
+.form-row {
+    display: flex;
+    gap: $spacing-md;
+    margin-bottom: $spacing-md;
+}
+
+.form-group {
+    margin-bottom: $spacing-md;
+
+    &.half {
+        flex: 1;
+    }
+}
+
+label {
+    display: block;
+    margin-bottom: $spacing-xs;
+    font-size: $font-size-small;
+
+    .required {
+        color: #ff0000;
+    }
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: $spacing-sm;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: $color-text;
+    font-family: $font-family-base;
+
+    &:focus {
+        outline: none;
+        border-color: $color-text;
+    }
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Map Styles */
+.map-section {
+    margin-top: $spacing-xl;
+}
+
+#map {
+    width: 100%;
+    height: 400px;
+    filter: grayscale(100%);
+}
+
+/* Responsive Styles */
+@media (max-width: $breakpoint-sm) {
+    .page-title {
+        font-size: 48px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: $spacing-sm;
+    }
+
+    .button-group {
+        flex-direction: column;
+        align-items: stretch;
+
+        .button {
+            width: 100%;
+        }
+    }
+}

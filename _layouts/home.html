@@ -1,0 +1,63 @@
+---
+layout: default
+---
+
+<section class="hero">
+    <div class="hero-image"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <p class="hero-text">
+            {{ site.title }} pushes the boundaries of technology to ensure every storyteller has access to the<br>
+            best tools and talent regardless of project scale or budget.
+        </p>
+    </div>
+
+    <!-- Scroll Down Indicator -->
+    <div id="scroll-down-animation">
+        <span class="mouse">
+            <span class="move"></span>
+        </span>
+    </div>
+</section>
+
+<section class="clients">
+    <div class="client-logos">
+        {% for client in site.data.clients %}
+        <div class="client-logo">
+            <img src="{{ client.image }}" alt="{{ client.name }}">
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="portfolio">
+    <div class="portfolio-grid">
+        {% for item in site.data.portfolio %}
+        <div class="portfolio-item">
+            <a href="{{ item.imdb_link }}" target="_blank" rel="noopener noreferrer">
+                <img src="{{ item.image }}" alt="{{ item.name }}">
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="portfolio secondary-portfolio">
+    <div class="portfolio-grid">
+        {% for item in site.data.secondary_portfolio %}
+        <div class="portfolio-item">
+            <img src="{{ item.image }}" alt="{{ item.name }}">
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="rebate">
+    <p>INTERNATIONAL PRODUCTIONS CAN ACCESS 20% CASH REBATE ON QUALIFYING SPEND - <a href="#">CLICK HERE FOR MORE</a></p>
+</section>
+
+<section class="sponsorship">
+    <h3>SPONSORSHIP</h3>
+    <p>{{ site.title }} is proud to be sponsors of the following:</p>
+    <p>Show Me Shorts Festival, Doc Edge Festival, Big Screen Symposium, NZ Cinematography Society, Loading Docs Initiative, Whānau Mārama: New Zealand International Film Festival</p>
+</section>
