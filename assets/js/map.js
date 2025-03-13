@@ -39,7 +39,7 @@ function initMap() {
 
     // Custom marker icon
     const markerIcon = {
-        url: '/assets/img/map-marker-pin-dark.png', // You'll need to create this image
+        url: '/assets/img/icons/pin-dark.png', // You'll need to create this image
         size: new google.maps.Size(48, 64),
         scaledSize: new google.maps.Size(24, 32),
         anchor: new google.maps.Point(12, 32)

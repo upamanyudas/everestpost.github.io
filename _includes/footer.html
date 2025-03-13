@@ -2,7 +2,7 @@
     <h3>CONTACT US</h3>
     <p>{{ site.address }}</p>
     <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
-    <p>{{ site.phone }}</p>
+    <p><a href="tel:{{ site.phone | replace: ' ', '' }}">{{ site.phone }}</a></p>
 
     <div class="footer-logos">
         {% for logo in site.data.footer_logos %}

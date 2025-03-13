@@ -1,0 +1,139 @@
+/* About Page Styles */
+.about-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+}
+
+.studio-intro {
+    margin: $spacing-xl 0;
+
+    .lead-text {
+        font-size: 24px;
+        line-height: 1.6;
+        margin-bottom: $spacing-xl;
+        font-weight: $font-weight-light;
+        // max-width: 800px;
+        text-align: center;
+    }
+}
+
+.studio-philosophy {
+    // max-width: 800px;
+
+    p {
+        margin-bottom: $spacing-md;
+        line-height: 1.8;
+    }
+}
+
+/* Team Section Styles */
+.team-section {
+    margin: $spacing-xl 0;
+}
+
+.team-member.featured {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: $spacing-xl;
+    margin-bottom: $spacing-xl;
+
+    .member-photo {
+        position: relative;
+
+        .profile-image {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .tmdb-link {
+            position: absolute;
+            bottom: $spacing-md;
+            right: $spacing-md;
+            background: #0d253f;
+            padding: $spacing-xs $spacing-xs $spacing-xxs;
+            border-radius: 4px;
+            transition: opacity $transition-speed ease;
+
+            &:hover {
+                opacity: 0.5;
+            }
+
+            .tmdb-logo {
+                height: 24px;
+                width: auto;
+            }
+        }
+    }
+
+    .member-info {
+        h2 {
+            font-size: 32px;
+            margin-bottom: $spacing-xs;
+        }
+
+        h3 {
+            font-size: 20px;
+            color: rgba($color-text, 0.8);
+            margin-bottom: $spacing-md;
+        }
+
+        .member-bio {
+            p {
+                margin-bottom: $spacing-md;
+                line-height: 1.8;
+            }
+        }
+    }
+}
+
+/* Department Section Styles (for future use) */
+.department-section {
+    margin: $spacing-xl 0;
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: $spacing-lg;
+        text-align: center;
+    }
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: $spacing-lg;
+}
+
+/* Responsive Styles */
+@media (max-width: $breakpoint-md) {
+    .team-member.featured {
+        grid-template-columns: 1fr;
+        gap: $spacing-lg;
+
+        .member-photo {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+    }
+}
+
+@media (max-width: $breakpoint-sm) {
+    .studio-intro {
+        .lead-text {
+            font-size: 20px;
+        }
+    }
+
+    .team-member.featured {
+        .member-info {
+            h2 {
+                font-size: 28px;
+            }
+
+            h3 {
+                font-size: 18px;
+            }
+        }
+    }
+}

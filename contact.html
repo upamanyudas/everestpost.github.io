@@ -16,20 +16,21 @@ hero_image: /assets/img/photo.jpg
     </section>
 
     <section class="remote-tools">
-        <h2>TEAMVIEWER AND SPEEDTEST</h2>
-        <p>For TeamViewer support software please click below, or check the connection to our servers</p>
+        <h2>RUSTDESK AND SPEEDTEST</h2>
+        <p>For RustDesk remote support software please click below, or check the connection to our servers</p>
         <div class="button-group">
-            <a href="https://www.teamviewer.com/download" class="button" target="_blank" rel="noopener noreferrer">TEAMVIEWER</a>
+            <a href="https://rustdesk.com/download" class="button" target="_blank" rel="noopener noreferrer">RUSTDESK</a>
             <a href="https://speedtest.everestpost.co.nz" class="button" target="_blank" rel="noopener noreferrer">SPEEDTEST</a>
         </div>
     </section>
 
     <section class="contact-form">
-        <p>If you'd like to get in touch, we would love to help bring your project to life! Contact: {{ site.email }}</p>
+        <p>If you'd like to get in touch, we would love to help bring your project to life! Contact: <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
         <p>Or fill out the form below:</p>
 
         <h2>CONTACT US</h2>
-        <form action="https://formspree.io/f/<your-form-id>" method="POST">
+        <form id="contactForm" action="https://formspree.io/f/xpwpznwn" method="POST">
+
             <div class="form-row">
                 <div class="form-group half">
                     <label for="firstName">First Name <span class="required">*</span></label>
@@ -56,7 +57,15 @@ hero_image: /assets/img/photo.jpg
                 <textarea id="message" name="message" rows="5"></textarea>
             </div>
 
-            <button type="submit" class="button">SUBMIT</button>
+            <!-- hCaptcha Widget -->
+            <div class="form-group">
+                <div class="h-captcha" data-sitekey="39fcf302-0358-4bf4-9d82-a46ce5146c08" data-callback="enableSubmit"></div>
+                <div id="captchaError" class="error-message" style="display: none; color: #ff3d00; margin-top: 5px;">
+                    Please complete the captcha before submitting.
+                </div>
+            </div>
+
+            <button type="submit" id="submitButton" class="button" disabled>SUBMIT</button>
         </form>
     </section>
 
@@ -64,6 +73,13 @@ hero_image: /assets/img/photo.jpg
         <div id="map"></div>
     </section>
 </div>
+
+<!-- hCaptcha Script -->
+<script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+
+<!-- Form Validation Script -->
+<script src="{{ '/assets/js/hCaptchaFormValidation.js' | relative_url }}"></script>
+
 <!-- Google Maps API and custom map script -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4viVwd0_EL4_tmrGbS7cZWjgOWRiIiMo&callback=initMap" async defer></script>
 <script src="{{ '/assets/js/map.js' | relative_url }}"></script>

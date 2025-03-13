@@ -6,8 +6,8 @@ description: >-
   picture, DIT, remote connectivity, and editing facilities for film and television.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.everestpost.co.nz" # the base hostname & protocol for your site
-phone: "+64 9 974 1992"
-address: "79 NEWTON ROAD, GREY LYNN, AUCKLAND, NEW ZEALAND"
+phone: "+64 29 043 01156"
+address: "56A SWAINSTON ROAD, AUCKLAND, NEW ZEALAND"
 
 # Build settings
 markdown: kramdown

@@ -1,25 +1,57 @@
 ---
+layout: default
+title: 404
 permalink: /404.html
-layout: page
 ---
 
-<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+<div class="error-page">
+  <div class="error-content">
+    <h1 class="error-title">404</h1>
+    <div class="error-subtitle">SCENE MISSING</div>
 
-<div class="container">
-  <h1>404</h1>
+    <div class="film-strip">
+      <div class="frame"></div>
+      <div class="frame missing">
+        <div class="question-mark">?</div>
+      </div>
+      <div class="frame"></div>
+    </div>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+    <p class="error-message">Looks like this footage ended up on the cutting room floor.</p>
+
+    <div class="error-details">
+      <p>We've searched through all our reels, but we can't find the page you're looking for.</p>
+      <p>Our editor must have made a continuity error, or perhaps this scene didn't make the final cut.</p>
+    </div>
+
+    <div class="director-notes">
+      <h3>DIRECTOR'S NOTES:</h3>
+      <ul>
+        <li>Check if the URL has been typed correctly</li>
+        <li>Perhaps this content is still in post-production</li>
+        <li>Maybe it's been archived in our backup drives</li>
+      </ul>
+    </div>
+
+    <div class="action-buttons">
+      <a href="/" class="button">BACK TO MAIN SCENE</a>
+      <a href="/contact/" class="button secondary">CALL THE PRODUCER</a>
+    </div>
+  </div>
 </div>
+
+<script>
+  // Add some animation to the 404 page
+  document.addEventListener('DOMContentLoaded', function() {
+    const missingFrame = document.querySelector('.frame.missing');
+
+    // Add a glitch effect to the missing frame
+    setInterval(function() {
+      missingFrame.classList.add('glitch');
+
+      setTimeout(function() {
+        missingFrame.classList.remove('glitch');
+      }, 200);
+    }, 3000);
+  });
+</script>
