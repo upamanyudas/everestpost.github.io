@@ -6,7 +6,7 @@
 
     <div class="footer-logos">
         {% for logo in site.data.footer_logos %}
-        <img src="{{ logo.image }}" alt="{{ logo.name }}">
+        <img src="/assets/img/logos{{ logo.image | relative_url }}" alt="{{ logo.name }}">
         {% endfor %}
     </div>
 </section>

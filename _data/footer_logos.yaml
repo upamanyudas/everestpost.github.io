@@ -1,14 +1,8 @@
-- name: Logo 1
-  image: /placeholder.svg?height=40&width=40
+- name: Dolby Vision
+  image: /dolby-vision.svg
 
-- name: Logo 2
-  image: /placeholder.svg?height=40&width=40
+- name: Dolby Atmos
+  image: /dolby-atmos.svg
 
-- name: Logo 3
-  image: /placeholder.svg?height=40&width=40
-
-- name: Logo 4
-  image: /placeholder.svg?height=40&width=40
-
-- name: Logo 5
-  image: /placeholder.svg?height=40&width=40
+- name: Screen Auckland
+  image: /screen-auckland.svg

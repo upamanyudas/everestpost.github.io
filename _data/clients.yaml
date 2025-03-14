@@ -1,32 +1,11 @@
-- name: Madman
-  image: /placeholder.svg?height=40&width=80
+- name: Centre for Science Communication
+  image: /centre-for-science-communication.svg
 
-- name: Sky
-  image: /placeholder.svg?height=40&width=80
+- name: NHNZ
+  image: /nhnz.svg
 
-- name: Space
-  image: /placeholder.svg?height=40&width=80
+- name: University of Otago
+  image: /university-of-otago.svg
 
-- name: TVNZ
-  image: /placeholder.svg?height=40&width=80
-
-- name: Al Jazeera
-  image: /placeholder.svg?height=40&width=80
-
-- name: BBC
-  image: /placeholder.svg?height=40&width=80
-
-- name: Amazon Studios
-  image: /placeholder.svg?height=40&width=80
-
-- name: Netflix
-  image: /placeholder.svg?height=40&width=80
-
-- name: Vendetta
-  image: /placeholder.svg?height=40&width=80
-
-- name: Film NZ
-  image: /placeholder.svg?height=40&width=80
-
-- name: HBO
-  image: /placeholder.svg?height=40&width=80
+- name: Nablet
+  image: /nablet.svg

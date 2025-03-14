@@ -23,7 +23,7 @@ layout: default
     <div class="client-logos">
         {% for client in site.data.clients %}
         <div class="client-logo">
-            <img src="{{ client.image }}" alt="{{ client.name }}">
+            <img src="/assets/img/logos{{ client.image | relative_url }}" alt="{{ client.name }}">
         </div>
         {% endfor %}
     </div>
