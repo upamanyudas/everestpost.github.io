@@ -20,6 +20,11 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/img/icons/apple-touch-icon.png' | relative_url }}">
     <link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
 
+    <!-- API Keys -->
+    {% if site.tmdb_api_key %}
+    <meta name="tmdb-api-key" content="{{ site.tmdb_api_key }}">
+    {% endif %}
+
     <!-- Styles -->
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">

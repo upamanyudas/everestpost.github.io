@@ -9,6 +9,12 @@ url: "https://www.everestpost.co.nz" # the base hostname & protocol for your sit
 phone: "+64 29 043 01156"
 address: "56A SWAINSTON ROAD, AUCKLAND, NEW ZEALAND"
 
+# API Keys (these will be overridden by environment variables in production)
+hcaptcha_site_key: "39fcf302-0358-4bf4-9d82-a46ce5146c08" # Development key
+google_maps_api_key: "AIzaSyA4viVwd0_EL4_tmrGbS7cZWjgOWRiIiMo"
+tmdb_api_key: "6bdd2c45c90f60fba93c92766f6f73e6" # TMDB API key
+formspree_form_id: "xpwpznwn" # Formspree form ID
+
 # Build settings
 markdown: kramdown
 permalink: /:title/

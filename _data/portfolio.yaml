@@ -1,5 +1,12 @@
-- name: Joika
-  image: /placeholder.svg?height=400&width=300
-  director: James Napier Robertson
-  year: 2025
-  imdb_link: https://www.imdb.com/title/example
+# - tmdb_url:
+# - tmdb_url:
+# - tmdb_url:
+# 2022
+- tmdb_url: https://www.themoviedb.org/movie/934878
+# 2021
+- tmdb_url: https://www.themoviedb.org/movie/830891-sherni
+- tmdb_url: https://www.themoviedb.org/movie/949339-a-forest-s-dream
+# 2019
+- tmdb_url: https://www.themoviedb.org/movie/752414-the-birds-of-play
+# 2017
+- tmdb_url: https://www.themoviedb.org/tv/72182-big-pacific

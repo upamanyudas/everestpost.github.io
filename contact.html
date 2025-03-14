@@ -29,7 +29,7 @@ hero_image: /assets/img/photo.jpg
         <p>Or fill out the form below:</p>
 
         <h2>CONTACT US</h2>
-        <form id="contactForm" action="https://formspree.io/f/xpwpznwn" method="POST">
+        <form id="contactForm" action="https://formspree.io/f/{{ site.formspree_form_id }}" method="POST">
 
             <div class="form-row">
                 <div class="form-group half">
@@ -59,7 +59,7 @@ hero_image: /assets/img/photo.jpg
 
             <!-- hCaptcha Widget -->
             <div class="form-group">
-                <div class="h-captcha" data-sitekey="39fcf302-0358-4bf4-9d82-a46ce5146c08" data-callback="enableSubmit"></div>
+                <div class="h-captcha" data-sitekey="{{ site.hcaptcha_site_key }}" data-callback="enableSubmit"></div>
                 <div id="captchaError" class="error-message" style="display: none; color: #ff3d00; margin-top: 5px;">
                     Please complete the captcha before submitting.
                 </div>
@@ -81,5 +81,5 @@ hero_image: /assets/img/photo.jpg
 <script src="{{ '/assets/js/hCaptchaFormValidation.js' | relative_url }}"></script>
 
 <!-- Google Maps API and custom map script -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4viVwd0_EL4_tmrGbS7cZWjgOWRiIiMo&callback=initMap" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key={{ site.google_maps_api_key }}&callback=initMap" async defer></script>
 <script src="{{ '/assets/js/map.js' | relative_url }}"></script>

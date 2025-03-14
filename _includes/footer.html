@@ -19,3 +19,6 @@
 
 <!-- JavaScript -->
 <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
+{% if page.layout == 'home' %}
+<script src="{{ '/assets/js/tmdb-fetcher.js' | relative_url }}"></script>
+{% endif %}

@@ -34,6 +34,8 @@ _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
+Gemfile.lock
+dev.sh
 
 # misc
 .DS_Store

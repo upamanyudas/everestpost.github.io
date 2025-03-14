@@ -7,8 +7,7 @@ layout: default
     <div class="hero-overlay"></div>
     <div class="hero-content">
         <p class="hero-text">
-            {{ site.title }} pushes the boundaries of technology to ensure every storyteller has access to the<br>
-            best tools and talent regardless of project scale or budget.
+            At {{ site.title }}, we push the boundaries of technology to empower storytellers. <br> No matter the project size or budget, we provide the best tools and talent to bring every vision to life.
         </p>
     </div>
 
@@ -33,16 +32,17 @@ layout: default
 <section class="portfolio">
     <div class="portfolio-grid">
         {% for item in site.data.portfolio %}
-        <div class="portfolio-item">
-            <a href="{{ item.imdb_link }}" target="_blank" rel="noopener noreferrer">
-                <img src="{{ item.image }}" alt="{{ item.name }}">
+        <div class="portfolio-item" data-tmdb-url="{{ item.tmdb_url }}">
+            <!-- Content will be populated by JavaScript -->
+            <a href="{{ item.tmdb_url }}" target="_blank" rel="noopener noreferrer">
+                <img src="{{ '/placeholder.svg?height=400&width=300' | relative_url }}" alt="Loading...">
             </a>
         </div>
         {% endfor %}
     </div>
 </section>
 
-<section class="portfolio secondary-portfolio">
+<!-- <section class="portfolio secondary-portfolio">
     <div class="portfolio-grid">
         {% for item in site.data.secondary_portfolio %}
         <div class="portfolio-item">
@@ -50,14 +50,14 @@ layout: default
         </div>
         {% endfor %}
     </div>
-</section>
+</section> -->
 
 <section class="rebate">
     <p>INTERNATIONAL PRODUCTIONS CAN ACCESS 20% CASH REBATE ON QUALIFYING SPEND - <a href="#">CLICK HERE FOR MORE</a></p>
 </section>
 
-<section class="sponsorship">
+<!-- <section class="sponsorship">
     <h3>SPONSORSHIP</h3>
     <p>{{ site.title }} is proud to be sponsors of the following:</p>
     <p>Show Me Shorts Festival, Doc Edge Festival, Big Screen Symposium, NZ Cinematography Society, Loading Docs Initiative, Whānau Mārama: New Zealand International Film Festival</p>
-</section>
+</section> -->
