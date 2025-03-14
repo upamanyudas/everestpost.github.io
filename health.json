@@ -1,0 +1,11 @@
+---
+layout: null
+permalink: /healthcheck/
+---
+{
+  "status": "ok",
+  "version": "{{ site.version | default: '1.0.0' }}",
+  "environment": "{{ jekyll.environment }}",
+  "timestamp": "{{ site.time | date_to_xmlschema }}"
+}
+

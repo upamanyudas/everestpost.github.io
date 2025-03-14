@@ -29,10 +29,10 @@ header {
 .mobile-menu {
     display: none;
     position: fixed;
-    top: 70px; /* Increased to account for taller logo */
+    top: 100px; /* Increased to account for taller logo */
     left: 0;
     width: 100%;
-    height: calc(100vh - 70px); /* Adjusted to match new top position */
+    height: calc(100vh - 100px); /* Adjusted to match new top position */
     background-color: rgba(0, 0, 0, 0.95);
     transform: translateX(-100%);
     transition: transform $transition-speed ease;
@@ -90,7 +90,7 @@ header {
 /* Hero Section */
 .hero {
     position: relative;
-    height: 100vh;
+    height: 70vh;
     overflow: hidden;
 }
 

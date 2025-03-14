@@ -1,0 +1,53 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% for page in site.pages %}
+    {% unless page.url contains 'health' or page.url contains '404' or page.url contains 'robots.txt' or page.sitemap == false %}
+    <url>
+      <loc>{{ site.url }}{{ page.url | remove: "index.html" }}</loc>
+      {% if page.last_modified_at %}
+      <lastmod>{{ page.last_modified_at | date_to_xmlschema }}</lastmod>
+      {% else %}
+      <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+      {% endif %}
+      {% if page.changefreq %}
+      <changefreq>{{ page.changefreq }}</changefreq>
+      {% else %}
+      <changefreq>monthly</changefreq>
+      {% endif %}
+      {% if page.priority %}
+      <priority>{{ page.priority }}</priority>
+      {% else %}
+      <priority>0.5</priority>
+      {% endif %}
+    </url>
+    {% endunless %}
+  {% endfor %}
+
+  {% for post in site.posts %}
+    <url>
+      <loc>{{ site.url }}{{ post.url }}</loc>
+      {% if post.last_modified_at %}
+      <lastmod>{{ post.last_modified_at | date_to_xmlschema }}</lastmod>
+      {% else %}
+      <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+      {% endif %}
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+    </url>
+  {% endfor %}
+
+  {% comment %}
+  Add custom collection items if needed
+  {% for item in site.your_collection %}
+    <url>
+      <loc>{{ site.url }}{{ item.url }}</loc>
+      <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+    </url>
+  {% endfor %}
+  {% endcomment %}
+</urlset>
