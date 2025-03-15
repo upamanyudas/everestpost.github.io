@@ -1,0 +1,63 @@
+---
+layout: page
+---
+
+<div class="container">
+
+    <!-- Gallery -->
+    {% if page.gallery %}
+    <section class="gallery-section">
+        <h2>Our Facility</h2>
+        <div class="gallery-grid">
+            {% for item in page.gallery %}
+            <div class="gallery-item" data-title="{{ item.title }}" data-description="{{ item.description }}">
+                <img src="{{ item.image }}" alt="{{ item.title }}" loading="lazy">
+                <div class="gallery-overlay">
+                    <h3>{{ item.title }}</h3>
+                    <span class="expand-icon">+</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Main Content -->
+    <div class="service-content">
+        {{ content }}
+    </div>
+
+    <!-- Technical Specs -->
+    {% if page.technical_specs %}
+    <section class="technical-specs">
+        <h2>Technical Specifications</h2>
+        <div class="specs-grid">
+            {% for spec in page.technical_specs %}
+            <div class="spec-item">
+                <h3>{{ spec.title }}</h3>
+                <h6>{{ spec.subtitle }}</h6>
+                <ul>
+                    {% for item in spec.items %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+
+</div>
+
+<!-- Modal for expanded gallery items -->
+<div class="gallery-modal" id="galleryModal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img id="modalImage" src="/placeholder.svg" alt="">
+        <div class="modal-text">
+            <h3 id="modalTitle"></h3>
+            <p id="modalDescription"></p>
+        </div>
+    </div>
+</div>
+
