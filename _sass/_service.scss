@@ -104,6 +104,135 @@
     }
 }
 
+// Approach Timeline
+.case-studies {
+    margin: 5rem 0;
+
+    h2 {
+        margin-bottom: 3rem;
+        text-align: center;
+    }
+}
+
+.approach-timeline {
+    max-width: 56rem;
+    margin: 0 auto;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 2.5rem;
+        width: 2px;
+        background-color: #e2e8f0;
+
+        @media (min-width: 768px) {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .dark & {
+            background-color: #4a5568;
+        }
+    }
+}
+
+.approach-step {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-left: 5rem;
+
+    @media (min-width: 768px) {
+        padding-left: 0;
+        display: flex;
+        justify-content: flex-start;
+
+        &:nth-child(even) {
+            justify-content: flex-end;
+
+            .step-number {
+                left: auto;
+                right: calc(50% - 2.5rem);
+            }
+
+            .step-content {
+                text-align: right;
+                padding-right: 3rem;
+                padding-left: 2rem;
+            }
+        }
+
+        &:nth-child(odd) {
+            .step-content {
+                padding-left: 3rem;
+                padding-right: 2rem;
+            }
+        }
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    .step-number {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 5rem;
+        height: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #3182ce;
+        color: #fff;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        font-weight: 700;
+        z-index: 1;
+
+        @media (min-width: 768px) {
+            left: calc(50% - 2.5rem);
+        }
+    }
+
+    .step-content {
+        background-color: #f8fafc;
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+        @media (min-width: 768px) {
+            width: 45%;
+        }
+
+        .dark & {
+            background-color: #2d3748;
+        }
+
+        h3 {
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #2d3748;
+
+            .dark & {
+                color: #e2e8f0;
+            }
+        }
+
+        p {
+            color: #4a5568;
+            margin-bottom: 0;
+
+            .dark & {
+                color: #cbd5e0;
+            }
+        }
+    }
+}
+
 // Technical Specs
 .technical-specs {
     padding: 4rem 1rem;
