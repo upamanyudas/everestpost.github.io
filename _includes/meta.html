@@ -1,18 +1,103 @@
-<!-- SEO Metadata -->
-<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-<meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}post-production, film editing, audio post, DIT services, remote editing, film production, video editing, color grading{% endif %}">
+<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.title }} provides industry-leading post-production services in Auckland, New Zealand, including media storage, archival solutions, picture editing, and audio post for film and television.{% endif %}">
+<meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}Auckland post-production, New Zealand film services, media storage Auckland, long-term media archival, post-production storage, film editing Auckland, DI suite New Zealand, LTO archival storage{% endif %}">
+
+<!-- Geo Location -->
+<meta name="geo.region" content="NZ" />
+<meta name="geo.placename" content="Auckland" />
+<meta name="geo.position" content="-36.848461;174.763336" />
+<meta name="ICBM" content="-36.848461, 174.763336" />
 
 <!-- Open Graph / Social Media -->
 <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
 <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-<meta property="og:title" content="{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }} | Professional Post-Production Services{% endif %}">
-<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-<meta property="og:image" content="{% if page.image %}{{ site.url }}/assets/img/{{ page.image }}{% else %}{{ site.url }}/assets/img/og-image.jpg{% endif %}">
+<meta property="og:title" content="{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }} | Professional Post-Production Services in Auckland, New Zealand{% endif %}">
+<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.title }} provides industry-leading post-production services in Auckland, New Zealand, including media storage, archival solutions, picture editing, and audio post.{% endif %}">
+<meta property="og:image" content="{% if page.image %}{{ site.url }}/assets/img/{{ page.image }}{% elsif page.hero_image %}{{ site.url }}{{ page.hero_image }}{% else %}{{ site.url }}/assets/img/logo-bg.jpg{% endif %}">
+<meta property="og:locale" content="en_NZ">
+<meta property="og:site_name" content="{{ site.title }}">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }} | Professional Post-Production Services{% endif %}">
-<meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<meta name="twitter:title" content="{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }} | Professional Post-Production Services in Auckland, New Zealand{% endif %}">
+<meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.title }} provides industry-leading post-production services in Auckland, New Zealand, including media storage, archival solutions, picture editing, and audio post.{% endif %}">
+<meta name="twitter:image" content="{% if page.image %}{{ site.url }}/assets/img/{{ page.image }}{% elsif page.hero_image %}{{ site.url }}{{ page.hero_image }}{% else %}{{ site.url }}/assets/img/logo-bg.jpg{% endif %}">
 
 <!-- Canonical URL -->
-<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+<link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html','' }}">
+
+<!-- Structured Data -->
+{% if page.layout == 'service' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "{{ page.title }}",
+  "description": "{{ page.description | default: site.description }}",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "{{ site.title }}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{ site.address | split: ',' | first }}",
+      "addressLocality": "{{ site.address | split: ',' | slice: 1, 1 | first | strip }}",
+      "addressRegion": "Auckland",
+      "postalCode": "",
+      "addressCountry": "New Zealand"
+    },
+    "telephone": "{{ site.phone }}",
+    "email": "{{ site.email }}"
+  },
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": -36.8509,
+      "longitude": 174.7645
+    },
+    "geoRadius": "50000"
+  },
+  "url": "{{ site.url }}{{ page.url }}"
+}
+</script>
+{% else %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "{{ site.title }}",
+  "image": "{{ site.url }}/assets/img/logo-bg.jpg",
+  "url": "{{ site.url }}",
+  "telephone": "{{ site.phone }}",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "79 Newton Road",
+    "addressLocality": "Grey Lynn",
+    "addressRegion": "Auckland",
+    "postalCode": "1010",
+    "addressCountry": "NZ"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -36.848461,
+    "longitude": 174.763336
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "opens": "09:00",
+    "closes": "18:00"
+  },
+  "sameAs": [
+    "https://www.facebook.com/everestpost"
+  ],
+  "priceRange": "$$",
+  "description": "{{ site.description }}"
+}
+</script>
+{% endif %}
