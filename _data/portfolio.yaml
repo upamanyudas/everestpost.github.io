@@ -1,6 +1,8 @@
 # - tmdb_url:
 # - tmdb_url:
 # - tmdb_url:
+# 2023
+- tmdb_url: https://www.themoviedb.org/tv/246373-dynamic-planet
 # 2022
 - tmdb_url: https://www.themoviedb.org/movie/934878
 # 2021
@@ -8,5 +10,7 @@
 - tmdb_url: https://www.themoviedb.org/movie/949339-a-forest-s-dream
 # 2019
 - tmdb_url: https://www.themoviedb.org/movie/752414-the-birds-of-play
+# 2018
+- tmdb_url: https://www.themoviedb.org/tv/115328-orangutan-jungle-school
 # 2017
 - tmdb_url: https://www.themoviedb.org/tv/72182-big-pacific
